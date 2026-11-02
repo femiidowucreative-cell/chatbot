@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer AI Chatbot</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <main class="app">
+        <header class="topbar">
+            <div class="brand">
+                <div class="brand-icon">AI</div>
+                <div>
+                    <h1>Consumer AI</h1>
+                    <p><span class="online-dot"></span> Online assistant</p>
+                </div>
+            </div>
+            <button id="clearChat" class="clear-button">New chat</button>
+        </header>
+
+        <section class="chat-area" id="chatArea">
+            <div class="welcome" id="welcome">
+                <div class="welcome-icon">✦</div>
+                <h2>How can I help you today?</h2>
+                <p>Ask me anything. I'm here to help.</p>
+
+                <div class="suggestions">
+                    <button class="suggestion">Help me solve a problem</button>
+                    <button class="suggestion">Explain something to me</button>
+                    <button class="suggestion">Give me some ideas</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="typing" id="typing" hidden>
+            <span></span><span></span><span></span>
+            <small>AI is thinking...</small>
+        </div>
+
+        <form class="composer" id="chatForm">
+            <textarea
+                id="messageInput"
+                placeholder="Message Consumer AI..."
+                rows="1"
+                required
+            ></textarea>
+            <button type="submit" id="sendButton" aria-label="Send message">↑</button>
+        </form>
+
+        <p class="disclaimer">AI can make mistakes. Check important information.</p>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
